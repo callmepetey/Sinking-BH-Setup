@@ -1,0 +1,113 @@
+#  Relevant files
+InitCondFile = /hildafs/home/nianyic/scratch1/dfModel/MP-gadget/merger/output/PART_000 # not used, no need to change
+OutputDir = /hildafs/home/nianyic/scratch1/dfModel/MP-gadget/halo1_lr_bh1e8/output # change this
+TreeCoolFile = /hildafs/home/nianyic/MP-Gadget-my/examples/TREECOOL_fg_june11  # change this
+OutputList = 0.001, 0.002, 0.003, 0.004, 0.005, 0.006, 0.007, 0.008, 0.009, 0.01, 0.011, 0.012, 0.013, 0.014, 0.015, 0.016, 0.017, 0.018, 0.019, 0.02, 0.021, 0.022, 0.023, 0.024, 0.025, 0.026, 0.027, 0.028, 0.029, 0.03, 0.031, 0.032, 0.033, 0.034, 0.035, 0.036, 0.037, 0.038, 0.039, 0.04, 0.041, 0.042, 0.043, 0.044, 0.045, 0.046, 0.047, 0.048, 0.049, 0.05, 0.051, 0.052, 0.053, 0.054, 0.055, 0.056, 0.057, 0.058, 0.059, 0.06, 0.061, 0.062, 0.063, 0.064, 0.065, 0.066, 0.067, 0.068, 0.069, 0.07, 0.071, 0.072, 0.073, 0.074, 0.075, 0.076, 0.077, 0.078, 0.079, 0.08, 0.081, 0.082, 0.083, 0.084, 0.085, 0.086, 0.087, 0.088, 0.089, 0.09, 0.091, 0.092, 0.093, 0.094, 0.095, 0.096, 0.097, 0.098, 0.099, 0.1, 0.101, 0.102, 0.103, 0.104, 0.105, 0.106, 0.107, 0.108, 0.109, 0.11, 0.111, 0.112, 0.113, 0.114, 0.115, 0.116, 0.117, 0.118, 0.119, 0.12, 0.121, 0.122, 0.123, 0.124, 0.125, 0.126, 0.127, 0.128, 0.129, 0.13, 0.131, 0.132, 0.133, 0.134, 0.135, 0.136, 0.137, 0.138, 0.139, 0.14, 0.141, 0.142, 0.143, 0.144, 0.145, 0.146, 0.147, 0.148, 0.149, 0.15, 0.151, 0.152, 0.153, 0.154, 0.155, 0.156, 0.157, 0.158, 0.159, 0.16, 0.161, 0.162, 0.163, 0.164, 0.165, 0.166, 0.167, 0.168, 0.169, 0.17, 0.171, 0.172, 0.173, 0.174, 0.175, 0.176, 0.177, 0.178, 0.179, 0.18, 0.181, 0.182, 0.183, 0.184, 0.185, 0.186, 0.187, 0.188, 0.189, 0.19, 0.191, 0.192, 0.193, 0.194, 0.195, 0.196, 0.197, 0.198, 0.199, 0.2
+Nmesh = 256
+
+# CPU time -limit
+TimeLimitCPU = 43000 #= 12 hours, or the maximum walltime you want the simulation to run
+MaxMemSizePerNode=0.3 # fraction of total memory of node
+
+
+# Code options
+NonPeriodic=1
+ComovingIntegrationOn=0
+Redshift=0.
+SplitGravityTimestepsOn=0
+RandomParticleOffset=1
+
+# Softening lengths
+GravitySoftening = 0.1
+MultiSpeciesSoftening = 1
+SofteningType0 = 0.1
+SofteningType1 = 0.1
+SofteningType4 = 0.1
+SofteningType5 = 0.1
+
+Asmth=1.5
+ShortRangeForceWindowType=exact
+
+#  Characteristics of run
+TimeMax = 0.2 # this is the cosmic time you want to evolve the halo, in unit of 10 Gyrs
+
+Omega0 = 0.3      # Total matter density  (at z=0)
+OmegaLambda = 0.7      # Cosmological constant (at z=0)
+OmegaBaryon = 0.046     # Baryon density        (at z=0)
+HubbleParam = 1      # Hubble paramater (may be used for power spec parameterization)
+
+CoolingOn = 0
+StarformationOn = 0
+BlackHoleOn = 0
+HydroOn = 0
+DensityIndependentSphOn = 0
+StarformationCriterion = density,h2
+RadiationOn = 0
+MassiveNuLinRespOn = 0
+WindOn = 0
+MetalCoolFile = /hildafs/home/nianyic/MP-Gadget-my/examples/cooling_metal_UVB  # change this
+
+# Accuracy of time integration
+MaxSizeTimestep = 0.1
+MinSizeTimestep = 0.00
+
+SnapshotWithFOF = 0
+
+#  Further parameters of SPH
+#DensityKernelType = quintic
+
+#DensityContrastLimit = 100   # max contrast for hydro force calculation
+#DensityResolutionEta = 1.0  # for Cubic spline 1.0 = 33
+#MaxNumNgbDeviation = 2
+#ArtBulkViscConst = 0.75
+#InitGasTemp = 580.0        # always ignored if set to 0
+#MinGasTemp = 5.0
+
+
+#----------------------BH Stuff-------------------------
+#BlackHoleFeedbackFactor = 0.05
+#BlackHoleFeedbackRadius = 0.
+#BlackHoleFeedbackRadiusMaxPhys = 0.
+#BlackHoleFeedbackMethod = spline | mass
+#SeedBlackHoleMass = 5.0e-5
+#BlackHoleAccretionFactor = 100.0
+#BlackHoleNgbFactor = 2.0
+#BlackHoleEddingtonFactor = 3.0
+MetalReturnOn = 0
+#MinFoFMassForNewSeed = 1
+#TimeBetweenSeedingSearch = 1.03
+
+#WriteBlackHoleDetails = 1
+#BH_DynFrictionMethod = 2  # no DM/Star
+#BH_DRAG = 0  # No drag
+#BH_DFBoostFactor = 1
+#SeedBHDynMass = 5e-3
+#BH_DFbmax = 10.
+#BlackHoleRepositionEnabled = 0 # No reposition
+#MergeGravBound = 1 #  bound check
+#----------------------SFR Stuff-------------------------
+
+#CritPhysDensity = 0       #  critical physical density for star formation in
+#  hydrogen number density in cm^(-3)
+
+#CritOverDensity = 57.7   #  overdensity threshold value
+
+#QuickLymanAlphaProbability  0 # Set to 1.0 to turn dense gas directly into stars.
+
+#MaxSfrTimescale = 1.5     # in internal time units
+
+
+#TempSupernova = 1.0e8   #  in Kelvin
+
+#TempClouds = 1000.0   #  in Kelvin
+#FactorSN = 0.1
+#FactorEVP = 1000.0
+
+#WindModel = ofjt10,decouple
+#WindEfficiency = 2.0
+#WindEnergyFraction = 1.0
+#WindSigma0 = 353.0 #km/s
+#WindSpeedFactor = 3.7
+
+#WindFreeTravelLength = 20
+#WindFreeTravelDensFac = 0.1
